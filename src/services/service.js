@@ -1,6 +1,6 @@
-import { productsManager } from "../dao/managers/mongo.manager.js";
+import { productsManager, usersManager  } from "../dao/managers/mongo.manager.js";
 
-class service {
+class Service {
   constructor(manager) {
     this.manager = manager;
   }
@@ -13,6 +13,6 @@ class service {
   destroyOne = async (obj) => this.manager.destroyOne(obj);
   destroyById = async (id) => this.manager.destroyById(id);
 }
-
-const productsService = new service(productsManager);
-export { productsService };
+const productsService = new Service(productsManager);
+const usersService = new Service(usersManager);
+export { productsService, usersService };

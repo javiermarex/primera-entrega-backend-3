@@ -1,3 +1,4 @@
+import User from "../models/users.model.js";
 import Product from "../models/products.model.js";
 
 class MongoManager {
@@ -14,6 +15,6 @@ class MongoManager {
   destroyById = async (id) => this.modelfindByIdAndDelete(id);
 }
 
+const usersManager = new MongoManager(User);
 const productsManager = new MongoManager(Product);
-
-export { productsManager };
+export { usersManager, productsManager };
